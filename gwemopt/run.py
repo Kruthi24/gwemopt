@@ -36,8 +36,10 @@ def run(args=None):
         raise ValueError(
             "The number of filters specified must match the number of exposure times."
         )
-
-    params["skymap"] = get_skymap(event_name=args.event)
+    if args.skymap_path is not None:
+        params["skymap"] = get_skymap(Path(args.skymap_path))
+    else:
+        params["skymap"] = get_skymap(event_name=args.event)
 
     # Function to read maps
     params, map_struct = read_skymap(params)

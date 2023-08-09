@@ -15,6 +15,7 @@ def parse_args(args):
 
     parser.add_argument("-o", "--outputDir", help="output directory", default=None)
     parser.add_argument("-e", "--event", help="event name", default=None)
+    parser.add_argument("--skymap_path", help="path to skymap file", default=None)
 
     parser.add_argument("--doCoverage", action="store_true", default=False)
 
